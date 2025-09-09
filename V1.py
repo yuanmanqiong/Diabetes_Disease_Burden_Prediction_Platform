@@ -97,12 +97,12 @@ def main():
         homepage()
 
 def navigateTo(page):
-    url = st.experimental_get_query_params()
+    url = st.query_params
     url["page"] = page
-    st.experimental_set_query_params(**url)
+    st.query_params(**url)
 
 def get_page_from_url():
-    query_params = st.experimental_get_query_params()
+    query_params = st.query_params
     return query_params.get('page', ['home'])[0]
 
 def homepage():
